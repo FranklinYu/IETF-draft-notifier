@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rspec-core (3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-support (3.8.0)
+    yard (0.9.16)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rspec-core (~> 3.8)
+  yard (~> 0.9)
+
+BUNDLED WITH
+   1.17.1
