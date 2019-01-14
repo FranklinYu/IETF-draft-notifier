@@ -1,0 +1,10 @@
+%h1 Subscribe
+%form{action: 'subscribe', method: 'post'}
+	.form-body
+		%label
+			name of the document (without the version number)
+			%input{type: 'text', name: 'name', title: 'example: draft-ietf-httpbis-expect-ct', pattern: '[a-z\-]+'}
+		%label
+			email address
+			%input{type: 'email', name: 'email', title: 'example: foobar@example.com'}
+	%input{type: 'submit'}

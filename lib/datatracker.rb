@@ -15,15 +15,17 @@ module Datatracker
     end
   end
 
+  # @param name [String] name of the document
   # @return [Integer] the latest version
   # @return [String] the new document that replaces +name+
   # @raise [NotFound] if the name is not found
   def self.latest_version_of(name)
-    doc = JSON.parse(open("https://datatracker.ietf.org/doc/#{name}/doc.json").read)
+    uri = "https://datatracker.ietf.org/doc/#{name}/doc.json"
+    doc = JSON.parse(open(uri).read)
     case doc['state']
     when 'RFC'
       rfc = doc['aliases'][1]
-      raise "unexpected alias #{rfc}" unless rfc.match(/rfc\d+/)
+      raise "unexpected alias #{rfc}" unless rfc =~ /rfc\d+/
       rfc
     when 'Replaced'
       doc['rev_history'].last['name']
@@ -34,7 +36,7 @@ module Datatracker
     end
   rescue OpenURI::HTTPError => e
     if e.io.status[0] == '404'
-      raise NotFound.new(name)
+      raise NotFound, name
     else
       raise
     end
