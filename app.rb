@@ -7,9 +7,9 @@ get '/' do
 end
 
 get '/subscribe' do
-  haml :subscribe
+  haml :'subscription/new'
 end
 
 post '/subscribe' do
-  haml :confirm
+  haml :'subscription/create'
 end
