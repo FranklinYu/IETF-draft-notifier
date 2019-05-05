@@ -25,6 +25,9 @@ end
 
 post '/subscribe' do
   halt 400 if params[:name].nil? || params[:email].nil?
+  @sender_address = ENV['SMTP_SENDER_ADDRESS']
+  @name = params[:name]
+  @email = params[:email]
   smtp_sender = "#{ENV['SMTP_SENDER_NAME']} <#{ENV['SMTP_SENDER_ADDRESS']}>"
   Mail.deliver(
     from: smtp_sender,

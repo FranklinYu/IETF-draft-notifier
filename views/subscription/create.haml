@@ -1,6 +1,11 @@
 %h1 Thank you!
 %p
+	You have requested subscription for
+	= succeed '.' do
+		%code= @name
 	You will receive an email from
-	%code= ENV['SMTP_SENDER_ADDRESS']
+	%code= @sender_address
+	to
+	%code= @email
 	to confirm the subscription shortly.
 	Please check your email inbox.

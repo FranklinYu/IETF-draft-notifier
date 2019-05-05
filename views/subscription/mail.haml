@@ -5,6 +5,8 @@
 	%body
 		%h1 Subscription confirmation
 		%p
-			Someone requested subscription of and IETF draft.
+			Someone requested subscription of IETF draft
+			= succeed '.' do
+				%code= @name
 			If this wasn’t you, please ignore this mail.
 		#footer IETF notifier
