@@ -30,7 +30,8 @@ post '/subscribe' do
     from: smtp_sender,
     to: params[:email],
     subject: "Subscription confirmation for [#{params[:name]}]",
-    body: 'test'
+    content_type: 'text/html',
+    body: haml(:'subscription/mail', layout: false)
   )
   haml :'subscription/create'
 end
