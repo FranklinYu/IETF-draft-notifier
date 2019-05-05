@@ -1,6 +1,19 @@
 # frozen_string_literal: true
 
+require 'dotenv/load'
+require 'mail'
 require 'sinatra'
+
+Mail.defaults do
+  delivery_method(
+    :smtp,
+    address: ENV['SMTP_SERVER'],
+    port: ENV['SMTP_PORT'],
+    user_name: ENV['SMTP_USERNAME'],
+    password: ENV['SMTP_PASSWORD'],
+    tls: true
+  )
+end
 
 get '/' do
   redirect '/subscribe'
@@ -11,5 +24,13 @@ get '/subscribe' do
 end
 
 post '/subscribe' do
+  halt 400 if params[:name].nil? || params[:email].nil?
+  smtp_sender = "#{ENV['SMTP_SENDER_NAME']} <#{ENV['SMTP_SENDER_ADDRESS']}>"
+  Mail.deliver(
+    from: smtp_sender,
+    to: params[:email],
+    subject: "Subscription confirmation for [#{params[:name]}]",
+    body: 'test'
+  )
   haml :'subscription/create'
 end

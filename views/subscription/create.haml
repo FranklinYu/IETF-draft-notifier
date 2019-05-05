@@ -1,6 +1,6 @@
 %h1 Thank you!
 %p
 	You will receive an email from
-	%code ietf-notification@franklinyu.name
+	%code= ENV['SMTP_SENDER_ADDRESS']
 	to confirm the subscription shortly.
 	Please check your email inbox.
