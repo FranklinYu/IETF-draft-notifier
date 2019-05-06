@@ -8,5 +8,8 @@
 			Someone requested subscription of IETF draft
 			= succeed '.' do
 				%code= @name
-			If this wasn’t you, please ignore this mail.
+			If this was you, please click
+			%a{href: @confirm_url} here
+			to confirm the subscription;
+			otherwise, please ignore this mail.
 		#footer IETF notifier
