@@ -31,7 +31,7 @@ GEM
       tilt
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
-    json-jwt (1.10.0)
+    json-jwt (1.10.1)
       activesupport (>= 4.2)
       aes_key_wrap
       bindata
@@ -88,7 +88,7 @@ DEPENDENCIES
   guard (~> 2.15)
   guard-rack (~> 2.2)
   haml (~> 5.0)
-  json-jwt (= 1.10.0)
+  json-jwt (= 1.10.1)
   mail (~> 2.7)
   puma
   rspec-core (~> 3.8)

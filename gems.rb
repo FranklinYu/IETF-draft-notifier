@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem 'dotenv', '~> 2.7'
 gem 'haml', '~> 5.0'
-gem 'json-jwt', '1.10.0'
+gem 'json-jwt', '1.10.1'
 gem 'mail', '~> 2.7'
 gem 'puma', group: :production
 gem 'rspec-core', '~> 3.8', group: :test
