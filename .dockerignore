@@ -1,0 +1,13 @@
+.bundle/
+.git/
+.yardoc/
+doc/
+spec/
+
+.dockerignore
+.env
+.env.example
+.gitignore
+Dockerfile
+Guardfile
+*.markdown
