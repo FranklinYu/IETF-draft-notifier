@@ -4,6 +4,10 @@ require 'dotenv/load'
 require 'json/jwt'
 require 'mail'
 require 'sinatra'
+require 'sinatra/activerecord'
+
+require_relative 'models/subscription.rb'
+require_relative 'models/ietf_draft.rb'
 
 jws_key = Base64.decode64(ENV['JWS_KEY'])
 
@@ -49,5 +53,6 @@ end
 get '/confirm' do
   claim = JSON::JWT.decode(params[:token], jws_key)
   halt 400 if Time.at(claim[:exp]) < Time.now
+  IetfDraft.find_by_name(params[:draft]).subscriptions.create(email: claim[:email])
   haml :confirm
 end

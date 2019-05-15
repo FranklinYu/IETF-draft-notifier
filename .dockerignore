@@ -11,3 +11,4 @@ spec/
 Dockerfile
 Guardfile
 *.markdown
+*.sqlite3
