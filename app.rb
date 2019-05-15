@@ -31,10 +31,10 @@ post '/subscribe' do
   @sender_address = ENV['SMTP_SENDER_ADDRESS']
   @name = params[:name]
   @email = params[:email]
-  jws = JSON::JWT.new(exp: 1.day.from_now, email: @email, draft: @name)
+  jws = JSON::JWT.new(exp: 1.day.from_now, email: @email)
     .sign(jws_key, :HS256)
   @confirm_url = URI(url('/confirm'))
-  @confirm_url.query = URI.encode_www_form(token: jws)
+  @confirm_url.query = URI.encode_www_form(draft: @name, token: jws)
   smtp_sender = "#{ENV['SMTP_SENDER_NAME']} <#{ENV['SMTP_SENDER_ADDRESS']}>"
   Mail.deliver(
     from: smtp_sender,

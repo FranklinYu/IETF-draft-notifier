@@ -2,9 +2,9 @@
 %form{action: 'subscribe', method: 'post'}
 	.form-body
 		%label
-			name of the document (without the version number)
+			name of the document (without the version number or “draft” prefix)
 			%input{type: 'text', name: 'name', size: 40,
-				placeholder: 'draft-ietf-httpbis-expect-ct', pattern: '[a-z0-9\-]+', required: true}
+				placeholder: 'ietf-httpbis-expect-ct', pattern: '[a-z0-9\-]+', required: true}
 		%label
 			email address
 			%input{type: 'email', name: 'email', size: 40,
