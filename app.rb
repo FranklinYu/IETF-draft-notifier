@@ -27,7 +27,7 @@ get '/subscribe' do
 end
 
 post '/subscribe' do
-  halt 400 if params[:name].nil? || params[:email].nil?
+  halt 400 if params[:name].empty? || params[:email].empty?
   @sender_address = ENV['SMTP_SENDER_ADDRESS']
   @name = params[:name]
   @email = params[:email]
