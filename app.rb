@@ -9,6 +9,15 @@ require 'sinatra/activerecord'
 require_relative 'models/subscription.rb'
 require_relative 'models/ietf_draft.rb'
 
+%w[
+  JWS_KEY
+  SMTP_SERVER
+  SMTP_PORT
+  SMTP_USERNAME
+  SMTP_PASSWORD
+  SMTP_SENDER_ADDRESS
+].each { |env| raise "missing environment  variable #{env}" unless ENV.key?(env) }
+
 jws_key = Base64.decode64(ENV['JWS_KEY'])
 
 Mail.defaults do
