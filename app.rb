@@ -19,6 +19,8 @@ require_relative 'models/ietf_draft.rb'
 ].each { |env| raise "missing environment variable #{env}" unless ENV.key?(env) }
 
 jws_key = Base64.decode64(ENV['JWS_KEY'])
+smtp_sender_name = ENV.fetch('SMTP_SENDER_NAME', 'IETF Notification')
+smtp_sender = "#{smtp_sender_name} <#{ENV['SMTP_SENDER_ADDRESS']}>"
 
 Mail.defaults do
   delivery_method(
@@ -48,7 +50,6 @@ post '/subscribe' do
                  .sign(jws_key, :HS256)
   @confirm_url = URI(url('/confirm'))
   @confirm_url.query = URI.encode_www_form(draft: @name, token: jws)
-  smtp_sender = "#{ENV['SMTP_SENDER_NAME']} <#{ENV['SMTP_SENDER_ADDRESS']}>"
   Mail.deliver(
     from: smtp_sender,
     to: params[:email],
