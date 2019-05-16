@@ -16,7 +16,7 @@ require_relative 'models/ietf_draft.rb'
   SMTP_USERNAME
   SMTP_PASSWORD
   SMTP_SENDER_ADDRESS
-].each { |env| raise "missing environment  variable #{env}" unless ENV.key?(env) }
+].each { |env| raise "missing environment variable #{env}" unless ENV.key?(env) }
 
 jws_key = Base64.decode64(ENV['JWS_KEY'])
 
