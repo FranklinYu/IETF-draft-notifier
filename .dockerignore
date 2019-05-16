@@ -10,5 +10,6 @@ spec/
 .gitignore
 Dockerfile
 Guardfile
+docker-compose.yaml
 *.markdown
 *.sqlite3
