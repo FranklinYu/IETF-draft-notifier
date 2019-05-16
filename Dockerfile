@@ -11,5 +11,6 @@ RUN apk add --virtual .build ruby-dev build-base postgresql-dev && \
 	apk del .build
 
 COPY . .
-CMD [ "sh", "entrypoint.sh", "bundle", "exec", "puma" ]
+ENTRYPOINT [ "sh", "entrypoint.sh" ]
+CMD [ "bundle", "exec", "puma" ]
 EXPOSE 9292
