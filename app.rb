@@ -20,7 +20,7 @@ require_relative 'models/ietf_draft.rb'
 
 jws_key = Base64.decode64(ENV['JWS_KEY'])
 smtp_sender_name = ENV.fetch('SMTP_SENDER_NAME', 'IETF Notification')
-smtp_sender = "#{smtp_sender_name} <#{ENV['SMTP_SENDER_ADDRESS']}>"
+smtp_sender = "#{smtp_sender_name} <#{ENV['SMTP_SENDER_ADDRESS']}>".freeze
 
 Mail.defaults do
   delivery_method(
