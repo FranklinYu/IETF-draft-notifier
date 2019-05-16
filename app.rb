@@ -45,7 +45,7 @@ post '/subscribe' do
   @name = params[:name]
   @email = params[:email]
   jws = JSON::JWT.new(exp: 1.day.from_now, email: @email)
-    .sign(jws_key, :HS256)
+                 .sign(jws_key, :HS256)
   @confirm_url = URI(url('/confirm'))
   @confirm_url.query = URI.encode_www_form(draft: @name, token: jws)
   smtp_sender = "#{ENV['SMTP_SENDER_NAME']} <#{ENV['SMTP_SENDER_ADDRESS']}>"
