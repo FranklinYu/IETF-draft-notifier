@@ -5,6 +5,12 @@ jobs:
       - image: circleci/ruby:2.5
     environment:
       RACK_ENV: test
+      JWS_KEY: none
+      SMTP_SERVER: none
+      SMTP_PORT: none
+      SMTP_USERNAME: none
+      SMTP_PASSWORD: none
+      SMTP_SENDER_ADDRESS: none
     steps:
 
       - checkout
