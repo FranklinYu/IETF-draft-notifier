@@ -9,8 +9,12 @@ gem 'mail', '~> 2.7'
 gem 'rake'
 gem 'sinatra', '~> 2.0'
 gem 'sinatra-activerecord', '~> 2.0'
-gem 'sqlite3', group: [:development, :test]
 gem 'yard', group: :doc
+
+group :development, :test do
+  gem 'faker'
+  gem 'sqlite3'
+end
 
 group :development do
   gem 'guard', '~> 2.15'
