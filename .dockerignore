@@ -3,6 +3,7 @@
 .yardoc/
 doc/
 spec/
+.circleci/
 
 .dockerignore
 .env
