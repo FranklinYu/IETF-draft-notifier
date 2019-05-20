@@ -7,7 +7,7 @@ gem 'haml', '~> 5.1'
 gem 'json-jwt', '1.10.1'
 gem 'mail', '~> 2.7'
 gem 'rake'
-gem 'rspec-core', '~> 3.8', group: :test
+gem 'rspec', '~> 3.8', group: :test
 gem 'sinatra', '~> 2.0'
 gem 'sinatra-activerecord', '~> 2.0'
 gem 'sqlite3', group: [:development, :test]
