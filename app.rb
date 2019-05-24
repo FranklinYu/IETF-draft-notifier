@@ -12,7 +12,6 @@ require_relative 'models/ietf_draft.rb'
 %w[
   JWS_KEY
   SMTP_SERVER
-  SMTP_PORT
   SMTP_USERNAME
   SMTP_PASSWORD
   SMTP_SENDER_ADDRESS
@@ -26,7 +25,7 @@ Mail.defaults do
   delivery_method(
     :smtp,
     address: ENV['SMTP_SERVER'],
-    port: ENV['SMTP_PORT'],
+    port: ENV.fetch('SMTP_PORT', 465),
     user_name: ENV['SMTP_USERNAME'],
     password: ENV['SMTP_PASSWORD'],
     tls: true

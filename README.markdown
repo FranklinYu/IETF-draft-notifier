@@ -7,7 +7,6 @@
 Environment variables:
   - `JWS_KEY`: Base64-encoded key for HS256; should be 128-bit (16-byte) or more
   - `SMTP_SERVER`: SMTP server, such as `smtp.example.com`
-  - `SMTP_PORT`: SMTP port number
   - `SMTP_USERNAME`: username for SMTP server
   - `SMTP_PASSWORD`: password for SMTP server
   - `SMTP_SENDER_ADDRESS`: address of sender
@@ -21,6 +20,7 @@ openssl rand -base64 16
 Optional environment variable:
   - `SMTP_SENDER_NAME`: name of sender, would appear in notification. Default to
     "IETF Notification".
+  - `SMTP_PORT`: SMTP port number. Default to 465.
 
 Resources:
   - [IETF Datatracker API](https://datatracker.ietf.org/api/)
