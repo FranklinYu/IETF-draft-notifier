@@ -1,3 +1,4 @@
 /doc/
 /.env
 *.sqlite3
+/.bundle/config
