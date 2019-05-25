@@ -2,7 +2,7 @@
 
 require_relative '../lib/datatracker'
 
-describe Datatracker do
+RSpec.describe Datatracker do
   describe '::get_latest_version' do
     context 'when the draft is active' do
       it 'gives current version number' do
