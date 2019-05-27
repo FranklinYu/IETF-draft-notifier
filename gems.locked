@@ -41,7 +41,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    haml (5.1.0)
+    haml (5.1.1)
       temple (>= 0.8.0)
       tilt
     i18n (1.6.0)
