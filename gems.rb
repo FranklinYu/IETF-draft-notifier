@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem 'dotenv', '~> 2.7'
 gem 'haml', '~> 5.1'
-gem 'json-jwt', '1.10.1'
+gem 'json-jwt', '1.10.2'
 gem 'mail', '~> 2.7'
 gem 'rake'
 gem 'sinatra', '~> 2.0'
