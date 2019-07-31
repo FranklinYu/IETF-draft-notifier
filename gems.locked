@@ -120,7 +120,7 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv (~> 2.7)
-  faker
+  faker (~> 2.0)
   guard (~> 2.15)
   guard-rack (~> 2.2)
   guard-rspec (~> 4.7)

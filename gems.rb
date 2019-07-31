@@ -12,7 +12,7 @@ gem 'sinatra-activerecord', '~> 2.0'
 gem 'yard', group: :doc
 
 group :development, :test do
-  gem 'faker'
+  gem 'faker', '~> 2.0'
   gem 'sqlite3'
 end
 
