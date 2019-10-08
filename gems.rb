@@ -23,7 +23,7 @@ group :development do
 end
 
 group :test do
-  gem 'rspec', '~> 3.8'
+  gem 'rspec', '~> 3.9'
   gem 'rspec_junit_formatter'
 end
 
