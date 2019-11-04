@@ -17,7 +17,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'guard', '~> 2.15'
+  gem 'guard', '~> 2.16'
   gem 'guard-rack', '~> 2.2'
   gem 'guard-rspec', '~> 4.7'
 end
